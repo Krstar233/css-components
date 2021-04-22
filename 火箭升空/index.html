@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rocket">
+            <img src="火箭.png" width="100">
+        </div>
+    </div>
+<script>
+window.onload = () => {
+    function rand(m, n){
+        return Math.round(Math.random() * (n-m) + m);
+    }
+
+    const starCount = 40;
+
+    for (let i = 0; i < starCount; i++){
+        const starI = document.createElement("i");
+        starI.style.left = rand(1, 99) + 'vw';
+        starI.style.height = rand(20, 80) + 'px';
+        starI.style.animationDuration = rand(5, 30) / 10 + 's';
+        starI.style.animationDelay = '-' + rand(5, 30) / 10 + 's';
+        console.log(starI.style.left);
+        document.querySelector(".container").appendChild(starI);
+    }
+}
+</script>
+</body>
+</html>
